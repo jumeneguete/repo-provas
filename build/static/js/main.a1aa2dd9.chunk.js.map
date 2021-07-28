@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.js"],"names":["ReactDOM","render","document","querySelector"],"mappings":"0HAAA,kDAGAA,IAASC,OAAO,cAAC,IAAD,IAASC,SAASC,cAAc,W","file":"static/js/main.a1aa2dd9.chunk.js","sourcesContent":["import ReactDOM from 'react-dom';\nimport App from './components/App';\n\nReactDOM.render(<App />, document.querySelector('root'));\n\n"],"sourceRoot":""}
