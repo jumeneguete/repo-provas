@@ -5,6 +5,7 @@ import Header from "./Header";
 import Home from "./Home";
 import Subject from "./Subject";
 import Teacher from "./Teacher";
+import ExamBySubject from "./ExamBySubject";
 
 export default function App() {
 
@@ -29,10 +30,10 @@ export default function App() {
                         <Header />
                         <Subject />
                     </Route>
-                    {/* <Route path="/subject/:id" exact>
+                    <Route path="/subject/:id" exact>
                         <Header />
                         <ExamBySubject />
-                    </Route> */}
+                    </Route>
                     <Route path="/teacher" exact>
                         <Header />
                         <Teacher />

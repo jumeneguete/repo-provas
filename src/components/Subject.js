@@ -21,83 +21,17 @@ export default function Subject() {
         <>
             <Home />
             <AllSubjects>
-                { }
-                <Term> 1º Período</Term>
-                {register.map(r => r.term.name === "1º Período" && (
-                    <>
-                        <Link to={`/subject/${r.id}`}><SubName key={r.id}>{r.name} ➞ <span> {r.exam.length} provas</span></SubName></Link>
-                    </>
-                ))}
 
-                <Term> 2º Período</Term>
-                {register.map(r => r.term.name === "2º Período" && (
+            {register.map(r =>(
                     <>
-                        <Link to={`/subject/${r.id}`}><SubName key={r.id}>{r.name} ➞ <span> {r.exam.length} provas</span></SubName></Link>
+                        <Link to={`/subject/${r.id}`} >
+                            <SubName key={r.id}> 
+                            <Term> {r.term.name}</Term>{r.name} ➞ <span color="lightslategray">{r.exam.length} provas</span>
+                            </SubName>
+                            </Link>
                     </>
                 ))}
-
-                <Term> 3º Período</Term>
-                {register.map(r => r.term.name === "3º Período" && (
-                    <>
-                        <Link to={`/subject/${r.id}`}><SubName key={r.id}>{r.name} ➞ <span> {r.exam.length} provas</span></SubName></Link>
-                    </>
-                ))}
-
-                <Term> 4º Período</Term>
-                {register.map(r => r.term.name === "4º Período" && (
-                    <>
-                        <Link to={`/subject/${r.id}`}><SubName key={r.id}>{r.name} ➞ <span> {r.exam.length} provas</span></SubName></Link>
-                    </>
-                ))}
-
-                <Term> 5º Período</Term>
-                {register.map(r => r.term.name === "5º Período" && (
-                    <>
-                       <Link to={`/subject/${r.id}`}><SubName key={r.id}>{r.name} ➞ <span> {r.exam.length} provas</span></SubName></Link>
-                    </>
-                ))}
-
-                <Term> 6º Período</Term>
-                {register.map(r => r.term.name === "6º Período" && (
-                    <>
-                        <Link to={`/subject/${r.id}`}><SubName key={r.id}>{r.name} ➞ <span> {r.exam.length} provas</span></SubName></Link>
-                    </>
-                ))}
-
-                <Term> 7º Período</Term>
-                {register.map(r => r.term.name === "7º Período" && (
-                    <>
-                        <Link to={`/subject/${r.id}`}><SubName key={r.id}>{r.name} ➞ <span> {r.exam.length} provas</span></SubName></Link>
-                    </>
-                ))}
-
-                <Term> 8º Período</Term>
-                {register.map(r => r.term.name === "8º Período" && (
-                    <>
-                        <Link to={`/subject/${r.id}`}><SubName key={r.id}>{r.name} ➞ <span> {r.exam.length} provas</span></SubName></Link>
-                    </>
-                ))}
-
-                <Term> 9º Período</Term>
-                {register.map(r => r.term.name === "9º Período" && (
-                    <>
-                        <Link to={`/subject/${r.id}`}><SubName key={r.id}>{r.name} ➞ <span> {r.exam.length} provas</span></SubName></Link>
-                    </>
-                ))}
-
-                <Term> 10º Período</Term>
-                {register.map(r => r.term.name === "10º Período" && (
-                    <>
-                        <Link to={`/subject/${r.id}`}><SubName key={r.id}>{r.name} ➞ <span> {r.exam.length} provas</span></SubName></Link>
-                    </>
-                ))}
-
-                <Term> Eletiva</Term>
-                {register.map(r => r.term.name === "Eletiva" && (
-                    <>
-                        <Link to={`/subject/${r.id}`}><SubName key={r.id}>{r.name} ➞ <span> {r.exam.length} provas</span></SubName></Link>
-                    </>
-                ))}
+             
             </AllSubjects>
         </>
     );
@@ -108,15 +42,13 @@ const AllSubjects = styled.div`
     margin: 0 auto 30px auto;
     display: flex;
     flex-direction: column;
-    align-items: center;
 `;
 
-const Term = styled.h1`
-    font-size: 30px;
-    font-weight: 900;
+const Term = styled.span`
+    font-size: 21px;
+    font-weight: 600;
     color: #3D024E;
-    margin-top: 20px;
-    margin-bottom: 10px;
+    margin-right: 15px;
 
 `;
 
@@ -124,8 +56,4 @@ const SubName = styled.h2`
     font-size: 19px;
     margin-bottom: 7px;
     cursor: pointer;
-
-    span {
-        color: lightslategray;
-    }
 `;

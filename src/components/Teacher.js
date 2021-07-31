@@ -33,11 +33,14 @@ export default function Teacher() {
 }
 
 const AllTeachers = styled.div`
-    width: 80%;
+    width: 50%;
     margin: 0 auto 30px auto;
     display: flex;
     flex-direction: column;
-    align-items: center;
+
+    @media (max-width: 614px) {
+     width: 90%;
+}
 `;
 
 const TeacherName = styled.h2`
