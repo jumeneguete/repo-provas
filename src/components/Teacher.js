@@ -1,14 +1,18 @@
 import axios from "axios";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components"
 import Home from "./Home"
 
 export default function Teacher() {
+    const [register, setRegister] = useState([]);
+    
     useEffect(() =>{
 
         const result = axios.get(`http://localhost:4000/teacher`);
         result.then(response => {
            console.log(response.data)
+           setRegister(response.data);
         })
 
     },[]);
@@ -17,15 +21,12 @@ export default function Teacher() {
         <>
         <Home />
         <AllTeachers>
-            <TeacherName>Fulano que so fala espanhol -- <span> 10 provas</span></TeacherName>
-            <TeacherName>Fulano que so fala espanhol -- <span> 10 provas</span></TeacherName>
-            <TeacherName>Fulano que so fala espanhol -- <span> 10 provas</span></TeacherName>
-            <TeacherName>Fulano que so fala espanhol -- <span> 10 provas</span></TeacherName>
-            <TeacherName>Fulano que so fala espanhol -- <span> 10 provas</span></TeacherName>
-            <TeacherName>Fulano que so fala espanhol -- <span> 10 provas</span></TeacherName>
-            <TeacherName>Fulano que so fala espanhol -- <span> 10 provas</span></TeacherName>
-            <TeacherName>Fulano que so fala espanhol -- <span> 10 provas</span></TeacherName>
-            <TeacherName>Fulano  so fala espanhol -- <span> 10 provas</span></TeacherName>
+            {register.map( r => (
+                <Link to={`/teacher/${r.id}`}>
+                    <TeacherName key={r.id}>{r.name} -- <span> {r.exam.length} provas</span></TeacherName>
+                </Link>
+            ))}
+            
         </AllTeachers>
         </>
     );
