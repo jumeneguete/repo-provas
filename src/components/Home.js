@@ -25,6 +25,7 @@ const Main = styled.div`
 const Buttons = styled.div`
     width: 600px;
     margin-top: 40px;
+    margin-bottom: 30px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;

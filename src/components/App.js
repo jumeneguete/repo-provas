@@ -35,7 +35,7 @@ export default function App() {
                     </Route> */}
                     <Route path="/teacher" exact>
                         <Header />
-                        <Subject />
+                        <Teacher />
                     </Route>
                     {/* <Route path="/teacher/:id" exact>
                         <Header />
