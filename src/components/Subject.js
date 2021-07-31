@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import styled from "styled-components"
+import {AllSubjects, Term, SubName, NoExam } from "./Styles"
 import Home from "./Home"
 
 export default function Subject() {
@@ -22,38 +22,28 @@ export default function Subject() {
             <Home />
             <AllSubjects>
 
-            {register.map(r =>(
+                {register.map(r => r.exam.length > 0 && (
                     <>
                         <Link to={`/subject/${r.id}`} >
-                            <SubName key={r.id}> 
-                            <Term> {r.term.name}</Term>{r.name} ➞ <span color="lightslategray">{r.exam.length} provas</span>
+                            <SubName key={r.id} haveExams ={true}>
+                                <Term haveExams ={true} > {r.term.name}</Term>{r.name} ➞ <span color="lightslategray">{r.exam.length} provas</span>
                             </SubName>
-                            </Link>
+                        </Link>
                     </>
                 ))}
-             
+
+                <NoExam>Disciplinas do curso sem provas adicionadas:</NoExam>
+
+                {register.map(r => r.exam.length === 0 && (
+                    <>
+                            <SubName key={r.id} haveExams = {false}>
+                                <Term haveExams ={false}> {r.term.name}</Term>{r.name}
+                            </SubName>
+                
+                    </>
+                ))}
+                
             </AllSubjects>
         </>
     );
 }
-
-const AllSubjects = styled.div`
-    width: 80%;
-    margin: 0 auto 30px auto;
-    display: flex;
-    flex-direction: column;
-`;
-
-const Term = styled.span`
-    font-size: 21px;
-    font-weight: 600;
-    color: #3D024E;
-    margin-right: 15px;
-
-`;
-
-const SubName = styled.h2`
-    font-size: 19px;
-    margin-bottom: 7px;
-    cursor: pointer;
-`;

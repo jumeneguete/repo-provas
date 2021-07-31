@@ -1,5 +1,5 @@
 import axios from "axios";
-import { AllSubjects, SubjectName, SubNameId  } from "./Styles";
+import { AllTeachers, ExamTeacher,NameTeacher } from "./Styles";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import Home from "./Home";
@@ -11,7 +11,7 @@ export default function ExamBySubject() {
     console.log(id)
     useEffect(() => {
 
-        const result = axios.get(`http://localhost:4000/${id}/subject`);
+        const result = axios.get(`http://localhost:4000/${id}/teacher`);
         result.then(response => {
             console.log(response.data)
             setRegister(response.data);
@@ -22,19 +22,18 @@ export default function ExamBySubject() {
     return (
         <>
             <Home />
-            <AllSubjects>
+            <AllTeachers>
                 {register.map(r => (
                     <>
-                        <SubjectName> {r.subject.name}</SubjectName>
+                        <NameTeacher key={r.id}> {r.teacher.name}</NameTeacher>
                         <Link to={`#`}>
-                            <SubNameId key={r.id}>
-                                {r.type.name} ➞ {r.name}.{r.semester} ➞ <span>{r.teacher.name}</span></SubNameId>
+                            <ExamTeacher key={r.id}>
+                                {r.type.name} ➞ {r.name}.{r.semester} ➞ <span>{r.subject.name}</span></ExamTeacher>
                         </Link>
                     </>
                 ))}
 
-            </AllSubjects>
+            </AllTeachers>
         </>
     )
 }
-
