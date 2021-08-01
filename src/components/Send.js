@@ -5,6 +5,7 @@ import dayjs from 'dayjs';
 import Input from "./Input";
 import FormButton from "./FormButton";
 import { useHistory } from "react-router-dom";
+import Joi from "joi";
 
 export default function Send() {
     const [url, setUrl] = useState("");
@@ -16,7 +17,6 @@ export default function Send() {
     const [subFromDB, setSubFromDB] = useState([]);
     const [teacherFromDB, setTeacherFromDB] = useState([]);
     const history = useHistory();
-
 
     useEffect(() => {
         const result = axios.get(`http://localhost:4000/subject`);
@@ -32,10 +32,21 @@ export default function Send() {
             setTeacherFromDB(response.data);
         })
 
-    }, [subject])
+    }, [subject]);
+
+    const linkSchema = Joi.object({ 
+        link: Joi.string().pattern(new RegExp(".+\.pdf$")),
+    });
 
     function register(e) {
         e.preventDefault();
+
+        if (type === "invalid" || year === "invalid" || semester === "invalid" || subject === "invalid" || teacher === "invalid" || !url){
+            return alert("Preencha todos os campos corretamente!")
+        }
+        
+        const validLink = linkSchema.validate({link: url});
+        if (validLink.error) return alert("Insira um link .pdf válido!");
 
         const body = { name: year, semester, link: url, subjectId: subject, teacherId: teacher, typeId: type }
         console.log(body)

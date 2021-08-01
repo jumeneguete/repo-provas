@@ -26,10 +26,10 @@ export default function ExamBySubject() {
             <SubjectName> {register[0]?.subject.name}</SubjectName>
                 {register.map(r => (
                     <>
-                        <Link to={`#`}>
+                        <a href={r.link} target="_blank">
                             <SubNameId key={r.id}>
                                 {r.type.name} ➞ {r.name}.{r.semester} ➞ <span>{r.teacher.name}</span></SubNameId>
-                        </Link>
+                        </a>
                     </>
                 ))}
 

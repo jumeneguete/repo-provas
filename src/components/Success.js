@@ -5,7 +5,7 @@ export default function Success() {
     return (
         <>
         <SuccessStyle> Enviado com sucesso! </SuccessStyle>
-        <Link to="/"><Back>Voltar</Back></Link>  
+        <Link to="/"><Back>Home</Back></Link>  
         </>
     );
 }
