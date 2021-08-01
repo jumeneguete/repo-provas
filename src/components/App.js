@@ -8,6 +8,7 @@ import Teacher from "./Teacher";
 import ExamBySubject from "./ExamBySubject";
 import ExamByTeacher from "./ExamByTeacher";
 import Send from "./Send";
+import Success from "./Success";
 
 export default function App() {
 
@@ -24,10 +25,10 @@ export default function App() {
                         <Header />
                         <Send />
                     </Route>
-                    {/* <Route path="/send/success" exact>
+                    <Route path="/send/success" exact>
                         <Header />
                         <Success />
-                    </Route> */}
+                    </Route>
                     <Route path="/subject" exact>
                         <Header />
                         <Subject />

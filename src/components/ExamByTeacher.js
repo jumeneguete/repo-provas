@@ -23,9 +23,10 @@ export default function ExamBySubject() {
         <>
             <Home />
             <AllTeachers>
+
+            <NameTeacher> {register[0]?.teacher.name}</NameTeacher>
                 {register.map(r => (
                     <>
-                        <NameTeacher key={r.id}> {r.teacher.name}</NameTeacher>
                         <Link to={`#`}>
                             <ExamTeacher key={r.id}>
                                 {r.type.name} ➞ {r.name}.{r.semester} ➞ <span>{r.subject.name}</span></ExamTeacher>

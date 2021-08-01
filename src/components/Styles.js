@@ -16,6 +16,7 @@ const Top = styled.div`
     top: 0;
     right: 0;
     left: 0;
+    z-index: 1;
 `;
 
 const HeaderLogo = styled(Link)`
@@ -182,4 +183,56 @@ const NameTeacher = styled.div`
 `;
 
 
-export {Top, HeaderLogo, Send, Icon, Text, Main, Buttons, Logo, AllSubjects, Term, SubName, NoExam, AllTeachers, TeacherName, SubjectName, SubNameId, ExamTeacher, NameTeacher}
+const Container = styled.div`
+    width: 80%;
+    margin: 120px auto 430px auto;
+    
+`;
+
+const SelectStyle = styled.select`
+    width: 400px;
+    height: 30px;
+    padding-left: 10px;
+    font-size: 18px;
+    font-family: 'Nunito', sans-serif;
+    margin: 10px auto;
+    border: none;
+    border-radius: 5px;
+    position: relative;
+
+        &::placeholder{
+            font-family: 'Nunito', sans-serif;
+            font-size: 18px;
+            color: #000;
+        }
+        &:focus{
+            box-shadow: 0 0 0 0;
+            outline: 0;
+        }
+
+`;
+
+const SuccessStyle = styled.div`
+    margin-top: 170px;
+    font-size: 30px;
+    font-weight: 600;
+    font-family: 'Nunito', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;
+
+const Back = styled.div`
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 20px;
+    font-family: 'Nunito', sans-serif;
+    text-decoration: underline;
+    font-style: italic;
+    color: purple;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;
+
+export {Top, HeaderLogo, Send, Icon, Text, Main, Buttons, Logo, AllSubjects, Term, SubName, NoExam, AllTeachers, TeacherName, SubjectName, SubNameId, ExamTeacher, NameTeacher, Container, SelectStyle, SuccessStyle, Back}

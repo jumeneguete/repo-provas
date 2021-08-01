@@ -1,11 +1,10 @@
-import styled from "styled-components";
+import { Container, SelectStyle } from "./Styles";
 import { useEffect, useState } from "react"
 import axios from "axios";
 import dayjs from 'dayjs';
 import Input from "./Input";
 import FormButton from "./FormButton";
 import { useHistory } from "react-router-dom";
-import { ContractOutline } from "react-ionicons";
 
 export default function Send() {
     const [url, setUrl] = useState("");
@@ -43,9 +42,14 @@ export default function Send() {
 
 
         const request = axios.post("http://localhost:4000/exam", body);
-        request.then(() => {history.push("/")});
-        request.catch(() => {
-            alert("Preencha corretamente os campos!");
+        request.then(() => {history.push("/send/success")});
+        request.catch((err) => {
+            if (err.response.status === 409){
+                alert("Parece que esta prova já está no nosso sistema!");
+            } else {
+                alert("Preencha corretamente os campos!");
+            }
+            
         });
     }
 
@@ -62,105 +66,43 @@ export default function Send() {
             <form onSubmit={register}>
             <Input type="text" value={url} setValue={setUrl} placeholder="link .pdf da prova" />
             <br/>
-            <SelectSemester value={type} onChange={(e) => setType(e.target.value)}>
+            <SelectStyle value={type} onChange={(e) => setType(e.target.value)}>
                 <option value="invalid">Selecione o tipo:</option>
                 <option value="1">P1</option>
                 <option value="2">P2</option>
                 <option value="3">PF</option>
                 <option value="4">2ª Chamada</option>
-            </SelectSemester>
+            </SelectStyle>
             <br />
-            <SelectSemester value={year} onChange={(e) => setYear(e.target.value)}>
+            <SelectStyle value={year} onChange={(e) => setYear(e.target.value)}>
                 <option value="invalid">Selecione o ano:</option>
                 {years.map(y => (
                     <option key={y.id} value={y.year}>{y.year}</option>
                 ))}
-            </SelectSemester>
+            </SelectStyle>
             <br />
-            <SelectSemester value={semester} onChange={(e) => setSemester(e.target.value)}>
+            <SelectStyle value={semester} onChange={(e) => setSemester(e.target.value)}>
                 <option value="invalid">Selecione o semestre:</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
-            </SelectSemester>
+            </SelectStyle>
             <br />
-            <SelectSubject value={subject} onChange={(e) => setSubject(e.target.value)}>
+            <SelectStyle value={subject} onChange={(e) => setSubject(e.target.value)}>
                 <option value="invalid">Selecione a discplina:</option>
                 {subFromDB.map(sub => (
                     <option key={sub.id} value={sub.id}>{sub.name}</option>
                 ))}
-            </SelectSubject>
+            </SelectStyle>
             <br/>
-            <SelectSubject value={teacher} onChange={(e) => setTeacher(e.target.value)}>
+            <SelectStyle value={teacher} onChange={(e) => setTeacher(e.target.value)}>
                 <option value="invalid">Selecione o professor:</option>
                 {teacherFromDB?.map(t => (
                     <option key={t.teacherId} value={t.teacher.id}>{t.teacher.name}</option>
                 ))}
-            </SelectSubject>
+            </SelectStyle>
             <br/>
             <FormButton type="submit" >Enviar</FormButton>
             </form>
         </Container>
     )
 };
-
-const Container = styled.div`
-    width: 80%;
-    margin: 120px auto 430px auto;
-    
-`;
-
-const SelectSemester = styled.select`
-    width: 300px;
-    height: 30px;
-    padding-left: 10px;
-    font-size: 18px;
-    font-family: 'Nunito', sans-serif;
-    margin: 10px auto;
-    border: none;
-    border-radius: 5px;
-    position: relative;
-
-        &::placeholder{
-            font-family: 'Nunito', sans-serif;
-            font-size: 18px;
-            color: #000;
-        }
-        &:focus{
-            box-shadow: 0 0 0 0;
-            outline: 0;
-        }
-
-`;
-
-const SelectSubject = styled.select`
-    width: 400px;
-    height: 30px;
-    padding-left: 10px;
-    font-size: 18px;
-    font-family: 'Nunito', sans-serif;
-    margin: 10px auto;
-    border: none;
-    border-radius: 5px;
-    position: relative;
-
-        &::placeholder{
-            font-family: 'Nunito', sans-serif;
-            font-size: 18px;
-            color: #000;
-        }
-        &:focus{
-            box-shadow: 0 0 0 0;
-            outline: 0;
-        }
-
-`;
-
-
-// export interface Body {
-//     name: string,
-//     semester: string,
-//     link: string,
-//     subjectId: number,
-//     teacherId: number,
-//     typeId: number
-//   };
