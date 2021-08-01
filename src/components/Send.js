@@ -54,9 +54,7 @@ export default function Send() {
         const validLink = linkSchema.validate({link: url});
         if (validLink.error) return alert("Insira um link .pdf válido!");
 
-        const body = { name: year, semester, link: url, subjectId: subject, teacherId: teacher, typeId: type }
-        console.log(body)
-
+        const body = { name: year, semester, link: url, subjectId: subject, teacherId: teacher, typeId: type };
 
         const request = axios.post("http://localhost:4000/exam", body);
         request.then(() => {history.push("/send/success")});

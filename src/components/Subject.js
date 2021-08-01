@@ -11,7 +11,6 @@ export default function Subject() {
 
         const result = axios.get(`http://localhost:4000/subject`);
         result.then(response => {
-            console.log(response.data)
             setRegister(response.data);
         });
         result.catch(() => {
