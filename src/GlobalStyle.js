@@ -68,7 +68,6 @@ a {
 
 body {
     font-family: 'Nunito', sans-serif;
-    //font-family: 'Train One', cursive;
     color: #353333;
     background-color: #F9F9F9;
 }

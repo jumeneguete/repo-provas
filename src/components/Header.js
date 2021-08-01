@@ -5,7 +5,7 @@ export default function Header() {
         <>
             <Top>
                 <HeaderLogo to={"/"}>Repo<span>P</span>rovas</HeaderLogo>
-                <Send to={"/"}>
+                <Send to={"/send"}>
                     <Icon
                         color={'#00000'}
                         title={"icone para adicionar uma prova"}
