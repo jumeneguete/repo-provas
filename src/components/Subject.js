@@ -13,7 +13,10 @@ export default function Subject() {
         result.then(response => {
             console.log(response.data)
             setRegister(response.data);
-        })
+        });
+        result.catch(() => {
+            return alert("Erro ao carregar matérias!");
+        }); 
 
     }, []);
 

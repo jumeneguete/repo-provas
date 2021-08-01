@@ -11,9 +11,11 @@ export default function Teacher() {
 
         const result = axios.get(`http://localhost:4000/teacher`);
         result.then(response => {
-            console.log(response.data)
             setRegister(response.data);
-        })
+        });
+        result.catch(() => {
+            return alert("Erro ao carregar professores!");
+        }); 
 
     }, []);
 

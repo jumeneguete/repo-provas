@@ -22,7 +22,10 @@ export default function Send() {
         const result = axios.get(`http://localhost:4000/subject`);
         result.then(response => {
             setSubFromDB(response.data);
-        })
+        });
+        result.catch(() => {
+            return alert("Erro ao carregar matérias!");
+        });        
 
     }, [])
 
@@ -30,7 +33,10 @@ export default function Send() {
         const result = axios.get(`http://localhost:4000/${subject}/subject-teacher`);
         result.then(response => {
             setTeacherFromDB(response.data);
-        })
+        });
+        result.catch(() => {
+            return alert("Erro ao carregar professores!");
+        }); 
 
     }, [subject]);
 

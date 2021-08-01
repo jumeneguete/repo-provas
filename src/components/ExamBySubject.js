@@ -8,14 +8,15 @@ export default function ExamBySubject() {
     const { id } = useParams();
     const [register, setRegister] = useState([]);
 
-    console.log(id)
     useEffect(() => {
 
         const result = axios.get(`http://localhost:4000/${id}/subject`);
         result.then(response => {
-            console.log(response.data)
             setRegister(response.data);
-        })
+        });
+        result.catch(() => {
+            return alert("Erro ao carregar provas!");
+        }); 
 
     }, []);
 
