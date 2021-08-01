@@ -9,7 +9,7 @@ export default function Home() {
             <Logo>Repo<span>P</span>rovas</Logo>
             <Buttons>
                <Link to="/subject"><Button>Disciplinas</Button></Link> 
-                <Link to="/teacher"><Button>Professores</Button></Link>
+                <Link to="/teacher"><Button>Professores {process.env.BANANA}</Button></Link>
             </Buttons>
         </Main>
     )

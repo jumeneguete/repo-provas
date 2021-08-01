@@ -19,7 +19,7 @@ export default function Send() {
     const history = useHistory();
 
     useEffect(() => {
-        const result = axios.get(`http://localhost:4000/subject`);
+        const result = axios.get(`${process.env.REACT_APP_HOST}/subject`);
         result.then(response => {
             setSubFromDB(response.data);
         });
@@ -30,7 +30,7 @@ export default function Send() {
     }, [])
 
     useEffect(() =>{
-        const result = axios.get(`http://localhost:4000/${subject}/subject-teacher`);
+        const result = axios.get(`${process.env.REACT_APP_HOST}/${subject}/subject-teacher`);
         result.then(response => {
             setTeacherFromDB(response.data);
         });
@@ -56,7 +56,7 @@ export default function Send() {
 
         const body = { name: year, semester, link: url, subjectId: subject, teacherId: teacher, typeId: type };
 
-        const request = axios.post("http://localhost:4000/exam", body);
+        const request = axios.post(`${process.env.REACT_APP_HOST}/exam`, body);
         request.then(() => {history.push("/send/success")});
         request.catch((err) => {
             if (err.response.status === 409){

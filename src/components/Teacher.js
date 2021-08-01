@@ -9,7 +9,7 @@ export default function Teacher() {
 
     useEffect(() => {
 
-        const result = axios.get(`http://localhost:4000/teacher`);
+        const result = axios.get(`${process.env.REACT_APP_HOST}/teacher`);
         result.then(response => {
             setRegister(response.data);
         });

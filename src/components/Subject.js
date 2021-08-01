@@ -9,7 +9,7 @@ export default function Subject() {
 
     useEffect(() => {
 
-        const result = axios.get(`http://localhost:4000/subject`);
+        const result = axios.get(`${process.env.REACT_APP_HOST}/subject`);
         result.then(response => {
             setRegister(response.data);
         });
@@ -17,7 +17,7 @@ export default function Subject() {
             return alert("Erro ao carregar matérias!");
         }); 
 
-    }, []);
+    }, []); console.log(register)
 
     return (
         <>
@@ -26,9 +26,9 @@ export default function Subject() {
 
                 {register.map(r => r.exam.length > 0 && (
                     <>
-                        <Link to={`/subject/${r.id}`} >
+                        <Link to={`/subject/${r.id}`} key={r.termId}>
                             <SubName key={r.id} haveExams ={true}>
-                                <Term haveExams ={true} > {r.term.name}</Term>{r.name} ➞ <span color="lightslategray">{r.exam.length} provas</span>
+                                <Term haveExams ={true} key={r.term.id}> {r.term.name}</Term>{r.name} ➞ <span color="lightslategray">{r.exam.length} provas</span>
                             </SubName>
                         </Link>
                     </>
