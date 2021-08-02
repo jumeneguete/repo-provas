@@ -125,7 +125,7 @@ const Term = styled.span`
 
 const SubName = styled.h2`
     font-size: 19px;
-    margin-bottom: 12px;
+    margin-bottom: 15px;
     cursor: ${props => props.haveExams ? "pointer" : "not-allowed"};
     color: ${props => props.haveExams ? "inherit" : "gray"};
 
