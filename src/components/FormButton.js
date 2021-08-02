@@ -27,4 +27,8 @@ const FormButtonStyle = styled.button`
             box-shadow: 0 0 0 0;
             outline: 0;
         }
+
+        @media (max-width: 614px) {
+            width: 90%;
+        }
 `;

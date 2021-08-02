@@ -105,6 +105,10 @@ const AllSubjects = styled.div`
     margin: 0 auto 30px auto;
     display: flex;
     flex-direction: column;
+
+    @media (max-width: 614px) {
+        width: 90%;
+    }
 `;
 
 const Term = styled.span`
@@ -113,6 +117,10 @@ const Term = styled.span`
     margin-right: 15px;
     color: ${props => props.haveExams ? "#3D024E" : "gray"};
 
+    @media (max-width: 614px) {
+        font-size: 18px;
+    }
+
 `;
 
 const SubName = styled.h2`
@@ -120,6 +128,11 @@ const SubName = styled.h2`
     margin-bottom: 7px;
     cursor: ${props => props.haveExams ? "pointer" : "not-allowed"};
     color: ${props => props.haveExams ? "inherit" : "gray"};
+
+    @media (max-width: 614px) {
+        font-size: 16px;
+    }
+    
 `;
 
 const NoExam = styled.div`
@@ -208,6 +221,10 @@ const SelectStyle = styled.select`
         &:focus{
             box-shadow: 0 0 0 0;
             outline: 0;
+        }
+
+        @media (max-width: 614px) {
+            width: 90%;
         }
 
 `;
