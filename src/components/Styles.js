@@ -156,7 +156,7 @@ const AllTeachers = styled.div`
 
 const TeacherName = styled.h2`
     font-size: 19px;
-    margin-bottom: 7px;
+    margin-bottom: 12px;
     cursor: pointer;
 
     span {
