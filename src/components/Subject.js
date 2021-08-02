@@ -28,7 +28,7 @@ export default function Subject() {
                     <>
                         <Link to={`/subject/${r.id}`} key={r.termId}>
                             <SubName key={r.id} haveExams ={true}>
-                                <Term haveExams ={true} key={r.term.id}> {r.term.name}</Term>{r.name} ➞ <span color="lightslategray">{r.exam.length} provas</span>
+                                <Term haveExams ={true} key={r.term.id}> {r.term.name}</Term>{r.name} ➞ <span color="lightslategray">{r.exam.length} {r.exam.length === 1 ? "prova" : "provas"}</span>
                             </SubName>
                         </Link>
                     </>

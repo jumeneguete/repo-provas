@@ -25,7 +25,7 @@ export default function Teacher() {
             <AllTeachers>
                 {register.map(r => r.exam.length > 0 && (
                     <Link to={`/teacher/${r.id}`}>
-                        <TeacherName key={r.id} haveExams={true}><span>{r.name}</span> ➞ {r.exam.length} provas</TeacherName>
+                        <TeacherName key={r.id} haveExams={true}><span>{r.name}</span> ➞ {r.exam.length} {r.exam.length === 1 ? "prova" : "provas"}</TeacherName>
                     </Link>
                 ))}
 
