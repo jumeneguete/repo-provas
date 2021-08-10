@@ -24,13 +24,13 @@ This is an web application where people can send a old exam and search for old e
 - Axios
 - <a href="https://www.npmjs.com/package/dayjs" target="_blank">Dayjs</a>
 - <a href="https://www.npmjs.com/package/joi" target="_blank">Joi</a>
-- API from https://github.com/jumeneguete/repoprovas-back
+- API from https://github.com/jumeneguete/repo-provas-back
 
 ### 🔹🔹How to run
 
 1. Clone this repository
-2. Clone the back-end repository at https://github.com/jumeneguete/repoprovas-back
-3. Follow instructions to run back-end at https://github.com/jumeneguete/repoprovas-back
+2. Clone the back-end repository at https://github.com/jumeneguete/repo-provas-back
+3. Follow instructions to run back-end at https://github.com/jumeneguete/repo-provas-back
 4. Install dependencies
 ```bash
 npm i
