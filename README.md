@@ -10,20 +10,21 @@ Try it out now at https://repoprovas-nu.vercel.app/
 
 ### 🔹🔹About
 
-This is an web application where people can book a movie session in the cinema. Below are the implemented features:
+This is an web application where people can send a old exam and search for old exams by teacher or by subject. Below are the implemented features:
 
-- Movie selection
-- Date selection
-- Seats selection
-- Required fields to fill
-- Successfully booked with booking details
+- Exam search by Subject
+- Exam search by Teacher
+- Required fiels to fill to send an exam
+- Successfully page when a sent in done
 
 ### 🔹🔹Technologies
 - React.js
 - React-router
 - Styled-components
 - Axios
-- API provided by Bootcamp Responde Aí  -  https://link-to-my-project-deployed.herokuapp.com
+- Dayjs
+- Joi
+- API from https://github.com/jumeneguete/repoprovas-back
 
 ### 🔹🔹How to run
 
