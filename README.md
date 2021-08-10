@@ -22,7 +22,7 @@ This is an web application where people can send a old exam and search for old e
 - React-router
 - Styled-components
 - Axios
-- <a href="https://www.npmjs.com/package/dayjs" target="_blank">Joi</a>
+- <a href="https://www.npmjs.com/package/dayjs" target="_blank">Dayjs</a>
 - <a href="https://www.npmjs.com/package/joi" target="_blank">Joi</a>
 - API from https://github.com/jumeneguete/repoprovas-back
 
