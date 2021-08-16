@@ -10,7 +10,7 @@ Try it out now at https://repoprovas-nu.vercel.app/
 
 ### 🔹🔹About
 
-This is an web application where people can send a old exam and search for old exams by teacher or by subject. Below are the implemented features:
+This is a web application where people can send a old exam and search for old exams by teacher or by subject. Below are the implemented features:
 
 - Exam search by Subject
 - Exam search by Teacher
