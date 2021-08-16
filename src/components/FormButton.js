@@ -1,34 +1,32 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
-export default function FormButton({children, type}) {
-    return (
-        <FormButtonStyle type={type} >{children} </FormButtonStyle>
-    );
+export default function FormButton({ children, type }) {
+  return <FormButtonStyle type={type}>{children} </FormButtonStyle>;
 }
 
 const FormButtonStyle = styled.button`
-    width: 350px;
-    height: 46px;
-    margin: 40px auto 40px auto;
-    border: none;
-    border-radius: 5px;
-    font-size: 20px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    color: #fff;
-    background-color: #3D024E;
-    text-align: center;
+  width: 350px;
+  height: 46px;
+  margin: 40px auto 40px auto;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #fff;
+  background-color: #3d024e;
+  text-align: center;
 
-        &:hover{
-            background-color: #4C135D;
-        }
+  &:hover {
+    background-color: #4c135d;
+  }
 
-        &:focus{
-            box-shadow: 0 0 0 0;
-            outline: 0;
-        }
+  &:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+  }
 
-        @media (max-width: 614px) {
-            width: 90%;
-        }
+  @media (max-width: 614px) {
+    width: 90%;
+  }
 `;

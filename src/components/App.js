@@ -1,4 +1,3 @@
-
 import GlobalStyle from "../GlobalStyle";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Header from "./Header";
@@ -11,42 +10,41 @@ import Send from "./Send";
 import Success from "./Success";
 
 export default function App() {
-
-    return (
-        <>
-            <GlobalStyle />
-            <BrowserRouter>
-                <Switch>
-                    <Route path="/" exact>
-                        <Header />
-                        <Home />
-                    </Route>
-                    <Route path="/send" exact>
-                        <Header />
-                        <Send />
-                    </Route>
-                    <Route path="/send/success" exact>
-                        <Header />
-                        <Success />
-                    </Route>
-                    <Route path="/subject" exact>
-                        <Header />
-                        <Subject />
-                    </Route>
-                    <Route path="/subject/:id" exact>
-                        <Header />
-                        <ExamBySubject />
-                    </Route>
-                    <Route path="/teacher" exact>
-                        <Header />
-                        <Teacher />
-                    </Route>
-                    <Route path="/teacher/:id" exact>
-                        <Header />
-                        <ExamByTeacher />
-                    </Route>
-                </Switch>
-            </BrowserRouter>
-        </>
-    );
+  return (
+    <>
+      <GlobalStyle />
+      <BrowserRouter>
+        <Switch>
+          <Route path="/" exact>
+            <Header />
+            <Home />
+          </Route>
+          <Route path="/send" exact>
+            <Header />
+            <Send />
+          </Route>
+          <Route path="/send/success" exact>
+            <Header />
+            <Success />
+          </Route>
+          <Route path="/subject" exact>
+            <Header />
+            <Subject />
+          </Route>
+          <Route path="/subject/:id" exact>
+            <Header />
+            <ExamBySubject />
+          </Route>
+          <Route path="/teacher" exact>
+            <Header />
+            <Teacher />
+          </Route>
+          <Route path="/teacher/:id" exact>
+            <Header />
+            <ExamByTeacher />
+          </Route>
+        </Switch>
+      </BrowserRouter>
+    </>
+  );
 }
