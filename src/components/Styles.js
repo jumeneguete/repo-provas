@@ -243,6 +243,81 @@ const Back = styled.div`
   align-items: center;
 `;
 
+const ButtonStyle = styled.button`
+  width: 250px;
+  height: 70px;
+  margin: 10px auto 10px auto;
+  border: none;
+  border-radius: 30px 2px 15px 2px;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #fff;
+  background-color: #3d024e;
+  text-align: center;
+  box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.25);
+
+  &:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+  }
+
+  @media (max-width: 614px) {
+    height: 60px;
+  }
+`;
+const FormButtonStyle = styled.button`
+  width: 350px;
+  height: 46px;
+  margin: 40px auto 40px auto;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #fff;
+  background-color: #3d024e;
+  text-align: center;
+
+  &:hover {
+    background-color: #4c135d;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+  }
+
+  @media (max-width: 614px) {
+    width: 90%;
+  }
+`;
+const InputStyle = styled.input`
+  width: 350px;
+  height: 30px;
+  padding-left: 10px;
+  font-size: 16px;
+  font-family: "Nunito", sans-serif;
+  margin: 10px auto;
+  border: solid 2px gray;
+  border-radius: 5px;
+
+  &::placeholder {
+    font-family: "Nunito", sans-serif;
+    font-size: 15px;
+    color: gray;
+    font-style: italic;
+  }
+  &:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+  }
+
+  @media (max-width: 614px) {
+    width: 90%;
+  }
+`;
+
 export {
   Top,
   HeaderLogo,
@@ -266,4 +341,7 @@ export {
   SelectStyle,
   SuccessStyle,
   Back,
+  ButtonStyle,
+  FormButtonStyle,
+  InputStyle,
 };
