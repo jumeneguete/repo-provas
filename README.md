@@ -14,8 +14,8 @@ This is an web application where people can send a old exam and search for old e
 
 - Exam search by Subject
 - Exam search by Teacher
-- Required fiels to fill to send an exam
-- Successfully page when a sent in done
+- Required fields to fill to send an exam
+- Successfully page when a sent is done successfully
 
 ### 🔹🔹Technologies
 - React.js
